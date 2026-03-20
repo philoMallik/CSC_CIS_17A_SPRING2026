@@ -1,0 +1,93 @@
+/* 
+ * File:   main.cpp
+ * Author: Philopatair Mallik
+ * Created on 3/11/2026
+ * Purpose: F1 Validate and Reverse
+ */
+
+//System Libraries Here
+#include <iostream>//cin,cout,endl
+#include <cstring> //strlen()
+using namespace std;
+//User Libraries Here
+
+//Global Constants Only, No Global Variables
+//Like PI, e, Gravity, or conversions
+
+//Function Prototypes Here
+bool  inRange(const char [],unsigned short &);//Output true,unsigned or false
+bool  reverse(unsigned short,signed short &);//Output true,short or false
+short subtrct(signed short,int);
+
+//Program Execution Begins Here
+int main(int argc, char** argv) {
+    //Declare all Variables Here
+    const int SIZE=80;     //More than enough
+    char  digits[SIZE];    //Character digits or not
+    unsigned short unShort;//Unsigned short
+    short snShort;         //Signed short
+    
+    //Input or initialize values Here
+    cout<<"Reverse a number and subtract if possible."<<endl;
+    cout<<"Input a number in the range of an unsigned short"<<endl;
+    cin>>digits;
+    
+    //Test if it is in the Range of an unsigned short
+    if(!inRange(digits,unShort)){
+        cout<<"No Conversion Possible"<<endl;
+        return 0;
+    }
+    
+    //Reverse and see if it falls in the range of an signed short
+    if(!reverse(unShort,snShort)){
+        cout<<"No Conversion Possible"<<endl;
+        return 0;
+    }
+    
+    //Now subtract if the result is not negative else don't subtract
+    snShort=subtrct(snShort,999);
+    
+    //Output the result
+    //cout<<"step4"<<endl;
+    cout<<snShort<<endl;
+    
+    //Exit
+    return 0;
+}
+bool  inRange(const char input[],unsigned short &unshort){
+    int temp=0;
+    bool end=false;
+    //cout<<"step1"<<endl;
+    //cout<<input<<endl;
+    for(int i=0;i<5;i++){
+        if(input[i]=='\0'){
+            i=5;
+            end=true;
+        }
+        else if(input[i]<48||input[i]>57) return false;
+        else temp=temp*10+(input[i]-48);
+    }
+    if(input[5]!='\0'&&end==false) return false;
+    //cout<<temp<<endl;
+    unshort=static_cast<unsigned short>(temp);
+    return true;
+}
+bool  reverse(unsigned short unshort,signed short &snshort){
+    unsigned short temp=0;
+    unsigned short input=unshort;
+    //cout<<"step2"<<endl;
+    temp=(temp*10)+((input/1    )%10);
+    temp=(temp*10)+((input/10   )%10);
+    temp=(temp*10)+((input/100  )%10);
+    temp=(temp*10)+((input/1000 )%10);
+    temp=(temp*10)+((input/10000)%10);
+    //cout<<temp<<endl;
+    if(temp>32767) return false;
+    snshort=static_cast<signed short>(temp);
+    return true;
+}
+short subtrct(signed short num,int val){
+    //cout<<"step3"<<endl;
+    if(num<=val) return num;
+    else return num-val;
+}

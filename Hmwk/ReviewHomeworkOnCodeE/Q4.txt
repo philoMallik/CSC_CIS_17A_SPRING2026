@@ -1,0 +1,96 @@
+/* 
+ * File:   main.cpp
+ * Author: Philopatair Mallik
+ * Created on 3/11/2026
+ * Purpose:  Even, Odd Vectors and Array Columns Even, Odd
+
+ */
+
+//System Libraries Here
+#include <iostream>//cin,cout
+#include <vector>  //vectors<>
+#include <iomanip> //Format setw(),right
+using namespace std;
+
+//User Libraries Here
+
+//Global Constants Only, No Global Variables
+//Allowed like PI, e, Gravity, conversions, array dimensions necessary
+const int COLMAX=2;//Only 2 columns needed, even and odd
+
+//Function Prototypes Here
+void read(vector<int> &, vector<int> &);
+void copy(vector<int>, vector<int>,int [][COLMAX]);
+void prntVec(vector<int>, vector<int>,int);//int n is the format setw(n)
+void prntAry(const int [][COLMAX],int,int,int);
+
+//Program Execution Begins Here
+int main(int argc, char** argv) {
+    //Declare all Variables Here
+    const int ROW=80;           //No more than 80 rows
+    int array[ROW][COLMAX];     //Really, just an 80x2 array, even vs. odd
+    vector<int> even(0),odd(0); //Declare even,odd vectors
+    
+    //Input data and place even in one vector odd in the other
+    read(even,odd);
+    
+    //Now output the content of the vectors
+    //          setw(10)
+    prntVec(even,odd,10);//Input even, odd vectors with setw(10);
+    
+    //Copy the vectors into the 2 dimensional array
+    copy(even,odd,array);
+    
+    //Now output the content of the array
+    //                              setw(10)
+    prntAry(array,even.size(),odd.size(),10);//Same format as even/odd vectors
+    
+    //Exit
+    return 0;
+}
+void read(vector<int> &even, vector<int> &odd){
+    int size;
+    int val;
+    cout<<"Input the number of integers to input."<<endl;
+    cin>>size;
+    cout<<"Input each number."<<endl;
+    for(int i=0,eInd=0,oInd=0;i<size;i++){
+        cin>>val;
+        if((val%2)==0) even.push_back(val);
+        else odd.push_back(val);
+    }
+}
+void copy(vector<int> even, vector<int>odd,int arr[][COLMAX]){
+    for(int i=0;i<even.size();i++){
+        arr[i][0]=even[i];
+    }
+    for(int i=0;i<odd.size();i++){
+        arr[i][1]=odd[i];
+    }
+}
+void prntVec(vector<int> even, vector<int> odd,int wdth){
+    int sizeE=even.size();
+    int sizeO=odd.size();
+    int i=0;
+    cout<<setw(wdth)<<"Vector"<<setw(wdth)<<"Even"<<setw(wdth)<<"Odd"<<endl;
+    do{
+        if(sizeE>i)cout<<setw(wdth*2)<<even[i];
+        else cout<<setw(wdth*2)<<" ";
+        if(sizeO>i)cout<<setw(wdth)<<odd[i];
+        else cout<<setw(wdth)<<" ";
+        cout<<endl;
+        i++;
+    }while(i<sizeE||i<sizeO);
+}
+void prntAry(const int arr[][COLMAX],int sizeE,int sizeO,int wdth){
+    int i=0;
+    cout<<setw(wdth)<<"Array"<<setw(wdth)<<"Even"<<setw(wdth)<<"Odd"<<endl;
+    do{
+        if(sizeE>i)cout<<setw(wdth*2)<<arr[i][0];
+        else cout<<setw(wdth*2)<<" ";
+        if(sizeO>i)cout<<setw(wdth)<<arr[i][1];
+        else cout<<setw(wdth)<<" ";
+        cout<<endl;
+        i++;
+    }while(i<sizeE||i<sizeO);
+}
