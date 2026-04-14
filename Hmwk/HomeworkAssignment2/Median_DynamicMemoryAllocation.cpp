@@ -6,8 +6,6 @@ purpose: C++ Template
 
 //system libraries
 #include <iostream>   //Input/Output library
-#include <cstdlib>    //Random Number Library 
-#include <ctime>      //Time Library
 #include <iomanip>    //output format library
 using namespace std;
 
@@ -27,33 +25,34 @@ void mrkSort(int *,int);    //Mark Sort
 //Execution begins here
 int main(int argv, char **argc)
 {
-    //Set the Random Number seed
-    srand(static_cast<unsigned int>(time(0)));
-
-    //Declare Variables
+    //Declare variables and fill
     int *arr,
         arrSize;
-    //Initialize Variables
+    
+    //Input the number of unique numbers
+    //and size of the array
     arr=getData(arrSize);
-
-    //Mapping Process -> Inputs to Outputs
-    //Allocate the median array and fill it
-     float *medArr=median(arr,arrSize);
-
-    //Display Inputs/Outputs
+    
+    //Calculate the mode array
+    float *medArr=median(arr,arrSize);
+    
+    //Print the initial array
     prntDat(arr,arrSize);
+    
+    //Print the modal information of the array
     prntMed(medArr);
-
+    
     //Delete allocated memory
     delete []arr;
     delete []medArr;
-
-    //Exit the program
+    
+    //Exit stage right
     return 0;
 };
+
 int *getData(int &arrSize){
     cin>>arrSize;
-    int arr[arrSize];
+    int *arr = new int[arrSize];
     for(int i=0;i<arrSize;i++){
         cin>>arr[i];
     }
@@ -69,17 +68,21 @@ void prntDat(int *arr,int arrSize){
 float *median(int *arr,int arrSize){
     float med;
     int index;
-    mrkSort(arr,arrSize);
+    int* srtArr = new int[arrSize];
+    for(int i=0;i<arrSize;i++){
+        srtArr[i]=arr[i];
+    }
+    mrkSort(srtArr,arrSize);
     if(arrSize%2==0){
         index=arrSize/2;
-        med=(arr[index]+arr[index+1])/2;
+        med=(srtArr[index-1]+srtArr[index])/2.0f;
     }
     else{
         index=(arrSize+1)/2;
-        med=arr[index];
+        med=srtArr[index-1];
     }
-
-    float* medArr=new float[arrSize+2];
+    arrSize+=2;
+    float* medArr=new float[arrSize];
     medArr[0]=arrSize;
     medArr[1]=med;
     for(int i=0;i<arrSize;i++){
