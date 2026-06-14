@@ -62,7 +62,38 @@ void ActionSpace::onGo(Player* player) {
 
 void ActionSpace::onChance(Player* player) {
 	cout << "Draw a Chance card." << endl;
-	// Implement Chance card logic here
+	Card drawnCard = chanceDeck->drawCard();
+	switch (drawnCard.getActionType()) {
+		case 0: // Move to a specific square
+			player->moveTo(drawnCard.getValue());
+			break;
+		case 1: // Move forward/backward a certain number of spaces
+			player->move(drawnCard.getValue());
+			break;
+		case 2: // Pay or receive money
+			if (drawnCard.getValue() > 0) {
+				cout << "Receive $" << drawnCard.getValue() << "." << endl;
+				*player += drawnCard.getValue();
+			} else {
+				cout << "Pay $" << -drawnCard.getValue() << "." << endl;
+				*player -= -drawnCard.getValue();
+			}
+			break;
+		case 3: // Get out of Jail Free
+			cout << "You got a Get Out of Jail Free card!" << endl;
+			player->setHasGetOutOfJailCard(player->getHasGetOutOfJailCard() + 1);
+			break;
+		case 4: // Go to Jail
+			player->goToJail();
+			break;
+		case 5: // Advance to Go (Collect $200)
+			player->moveTo(0);
+			*player += 200;
+			break;
+		default:
+			cout << "Unknown card action." << endl;
+			break;
+	}
 }
 
 void ActionSpace::onCommunityChest(Player* player) {
