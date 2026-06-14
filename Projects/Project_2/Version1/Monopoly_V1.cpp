@@ -3,6 +3,22 @@ Author: Philopatair Mallik
 Date: 03/00/2026
 purpose: C++ Template 
 */
+/*
+Version 1
+-Added the class file for the game board (Board) which contains an array of Square objects representing the spaces on the board, and functions to initialize the board and read board data from an external file.
+-Added the class file for the dice (Dice) which simulates rolling two six-sided dice and includes functionality to track consecutive doubles rolled by a player.
+-Added the class file for the players (Player) which includes attributes such as name, ID, token, balance, position on the board, properties owned, jail status, and functions to handle player actions such as moving, buying properties, going to jail, etc.
+-Added the class file for the properties (Property) which includes attributes such as name, price, rent, owner, and functions to handle property-related actions such as buying, paying rent, etc.
+-Added the class file for the city properties (City) which inherits from Property and includes additional attributes such as color group, house count, house cost, and functions to handle building houses and calculating rent based on the number of houses.
+-Added the class file for the railroads (Railroad) which inherits from Property and includes additional attributes such as rent based on the number of railroads owned, and functions to calculate rent accordingly.
+-Added the class file for the utilities (Utility) which inherits from Property and includes additional attributes such as rent multiplier based on the number of utilities owned, and functions to calculate rent based on the dice roll.
+-Updated the main game loop to incorporate the new classes and their functionalities, including player turns, dice rolls, and interactions with the board spaces.
+
+//Board class is an array of Square objects, where each Square can be a Property, ActionSpace, or other types of spaces on the Monopoly board.
+ The Board class includes functions to initialize the board with the appropriate spaces and properties, and to read board data from an external file to set up the game.
+*/
+
+
 
 //system libraries
 #include <iostream>   //Input/Output library
@@ -14,6 +30,8 @@ using namespace std;
 
 //User libraries
 #include "Player.h"
+#include "Railroad.h"
+#include "Utility.h"
 
 #include "Dice.h"
 
@@ -355,7 +373,7 @@ void jailTurn(int plyrInd, Player* plyrs, Board& board){ //Function to handle th
                 plyrs[plyrInd].incrementJailTurns(); //Function to increment the number of turns the player has been in jail by 1
                 if (plyrs[plyrInd].getJailTurns() >= 3) { //If this is the player's third turn in jail, they must pay the fine and get out of jail
                     cout << "This is your third turn in jail. You must pay the fine to get out of jail." << endl;
-                    plyrs[plyrInd].deductMoney(50); //Function to deduct a certain amount from the player's balance for paying the fine
+                    plyrs[plyrInd].deductBalance(50); //Function to deduct a certain amount from the player's balance for paying the fine
                     plyrs[plyrInd].getOutOfJail(); //Get the player out of jail after paying the fine
                     gotOutOfJail = true;
                 }
@@ -363,7 +381,7 @@ void jailTurn(int plyrInd, Player* plyrs, Board& board){ //Function to handle th
             break;
         case 2:
             cout << "You chose to pay the fine to get out of jail." << endl;
-            plyrs[plyrInd].deductMoney(50); //function to deduct a certain amount from the player's balance for paying the fine
+            plyrs[plyrInd].deductBalance(50); //function to deduct a certain amount from the player's balance for paying the fine
             plyrs[plyrInd].getOutOfJail(); //Function to get the player out of jail, updates inJail flag to false and resets jailTurns to 0
             gotOutOfJail = true;
             break;

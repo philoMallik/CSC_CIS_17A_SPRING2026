@@ -3,6 +3,14 @@ Author: Philopatair Mallik
 Date: 03/00/2026
 purpose: C++ Template 
 */
+/*
+Version 2
+-Added the function prototype for reading the board configuration from a file and initializing the board accordingly (readFromFile).
+-Added the function prototype for moving a player a specified number of steps on the board (movePlayer), which will be used to handle player movement based on dice rolls and other game actions.
+-Updated the main function to call the readFromFile function to initialize the board at the start of the game, and to include a placeholder for the movePlayer function to be implemented later.
+-Added the necessary include statements for the new classes (Railroad and Utility) that were added in Version 1, to ensure that the main game file has access to these classes for handling player interactions with these types of properties on the board.
+-Added comments to the main function and the new function prototypes to clarify their purpose and how they fit into the overall game implementation.
+*/
 
 //system libraries
 #include <iostream>   //Input/Output library
@@ -14,6 +22,8 @@ using namespace std;
 
 //User libraries
 #include "Player.h"
+#include "Railroad.h"
+#include "Utility.h"
 
 #include "Dice.h"
 

@@ -4,6 +4,23 @@ Date: 03/00/2026
 purpose: C++ Template 
 */
 
+/*Version 0
+-Switched all structures from Previous Project to classes with appropriate member variables and functions, including constructors, destructors, accessors, mutators, operator overloads, and other member functions as needed for the Monopoly game implementation.
+-Added header files for each class and implemented the member functions in corresponding .cpp files.
+-- i have class Board with an array of pointers to Square objects, and a function to initialize the board with the appropriate spaces and properties.
+-- i have class Player with member variables for name, ID, token, balance, position, properties owned, jail status, and functions to move the player, buy properties, go to jail, etc.
+-- i have class Dice with member variables for the two dice values and a counter for consecutive doubles, and functions to roll the dice, check for doubles, etc.
+-- i have class Square as a base class for different types of spaces on the board, with derived classes for properties, action spaces, etc.
+-- i have a class Property that inherits from Square and has additional member variables for rent, owner, etc., and functions to handle buying, paying rent, etc.
+-- i have a class City that inherits from Property and has additional member variables for the number of houses/hotels, and functions to handle upgrading the property, calculating rent, etc.
+-- i have a class Railroad that inherits from Property and has additional member variables for rent based on the number of railroads owned, and functions to calculate rent accordingly.
+-- i have a class Utility that inherits from Property and has additional member variables for rent multiplier based on the number of utilities owned, and functions to calculate rent based on dice rolls.
+-- i have a class ActionSpace that inherits from Square and has member variables for the type of action (e.g., Chance, Community Chest, Go to Jail, etc.) and functions to handle the action when a player lands on it.
+-Modified the main game loop in Monopoly_V1.cpp to incorporate the new class structures and member functions, allowing players to take their turns, roll dice, move around the board, buy properties, pay rent, go to jail, etc., based on the new class implementations.
+*/
+
+
+
 //system libraries
 #include <iostream>   //Input/Output library
 #include <cstdlib>    //Random Number Library 

@@ -3,6 +3,16 @@ Author: Philopatair Mallik
 Date: 03/00/2026
 purpose: C++ Template 
 */
+/*
+Version 4
+-Added the class file for the Chance and Community Chest cards (Card) which includes attributes such as description, action type, and value, and functions to handle the effects of the cards when drawn by a player.
+--Class Template for Deck<Card> storage of Chance and Community Chest cards has been implemented, allowing for easy management of the card decks in the game.
+--class Card includes a constructor to initialize the card attributes, accessors to retrieve the card information, and a destructor.
+-Started on implementing on using the card effects in the game, with placeholders for the logic to handle different types of card actions (e.g., moving to a specific square, paying or receiving money, getting out of jail free, etc.) when a player draws a card during their turn.
+-Updated the main game loop to include logic for drawing cards when a player lands on a Chance or Community Chest space, and to call the appropriate functions to handle the card effects based on the type of card drawn.
+-Added comments to the new class and function prototypes to clarify their purpose and how they fit into the overall game implementation.
+*/
+
 
 //system libraries
 #include <iostream>   //Input/Output library

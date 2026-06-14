@@ -3,6 +3,13 @@ Author: Philopatair Mallik
 Date: 03/00/2026
 purpose: C++ Template 
 */
+/*
+Version 5
+-Added functionality to read and write the board configuration to a file, allowing the game state to be saved and loaded.
+-Added manual initialization of the Chance and Community Chest decks to ensure the correct cards are available during gameplay.
+-Fixed how the board is initialized in the main function to use the readFromFile function, and added a call to writeToFile to save the board configuration after initialization.
+-Finished implementing the Chance and Community Chest card effects in the game logic, allowing players to experience the full range of card actions during their turns.
+*/
 
 //system libraries
 #include <iostream>   //Input/Output library

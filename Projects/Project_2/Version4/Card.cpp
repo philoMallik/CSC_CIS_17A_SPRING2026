@@ -14,20 +14,9 @@ using namespace std;
 #include "Card.h"
 
 
-Card::Card() {
-    this->description[0] = '\0';
-    this->actionType = -1;
-    this->value = 0;
-}
-
-
 //Constructor to initialize the card with a description, action type, and value
 Card::Card(const char* des, int actionType, int value) {
-    if (des != nullptr) {
-        strncpy(this->description, des, 100);
-    } else {
-        this->description[0] = '\0';
-    }
+    strncpy(this->description, des, 100);
     this->description[99] = '\0';
     this->actionType = actionType;
     this->value = value;

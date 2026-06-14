@@ -3,6 +3,12 @@ Author: Philopatair Mallik
 Date: 03/00/2026
 purpose: C++ Template 
 */
+/*
+Version 3
+-Added Operator overloads for the Player class to allow for easier manipulation of the player's balance using += and -= operators, which will be used to handle transactions such as paying rent, receiving money, etc. in a more intuitive way in the game logic.
+-Added a toString() member function to the Player class to print the details of the player (name, balance, position, properties owned, etc.) in a formatted manner, which will be useful for displaying player information during the game.
+*/
+
 
 //system libraries
 #include <iostream>   //Input/Output library
