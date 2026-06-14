@@ -61,6 +61,5 @@ Square* Board::readSquareFromFile(string fileName, int id){
     inFile.read(reinterpret_cast<char*>(sq), sizeof(Property)); //Read the square data into the current Board object
     inFile.close();
 
-    //inFile.close(); // Already closed above
     return sq;
 }

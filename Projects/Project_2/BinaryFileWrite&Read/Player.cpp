@@ -287,8 +287,7 @@ void Player::unmortgageProperty(Board& board) {
 }
 
 void Player::tradeProperty(Player* plyr, Board& board) {
-    // This function would facilitate trading properties between two 
-    cout << "Trading properties is not yet implemented." << endl;
+    // This function would facilitate trading properties between two players
 }
 
 void Player::declareBankruptcy() {
