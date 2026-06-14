@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Monopoly Game Flow" id="0">
+    <mxGraphModel dx="5828" dy="3108" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="clEPGdFe9xM6kFZr75yi-0" />
+        <mxCell id="clEPGdFe9xM6kFZr75yi-1" parent="clEPGdFe9xM6kFZr75yi-0" />
+        <mxCell id="7QlRNy11sMe4qah2yADF-34" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-33" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-32" parent="clEPGdFe9xM6kFZr75yi-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Author: Philopatair Mallik&lt;br&gt;Date: 05/05/2026&lt;br&gt;purpose: Project 1 - Monopoly Game Simulation" vertex="1">
+          <mxGeometry height="60" width="280" x="35.75" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-36" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-35" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-33" parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;rounded=0;" value="//system libraries&#xa;#include &lt;iostream&gt;   //Input/Output library&#xa;#include &lt;cstdlib&gt;    //Random Number Library &#xa;#include &lt;ctime&gt;      //Time Library&#xa;#include &lt;iomanip&gt;    //Format Library&#xa;#include &lt;fstream&gt;    //File I/O Library" vertex="1">
+          <mxGeometry height="90" width="218" x="400" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-38" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.564;entryDx=0;entryDy=0;entryPerimeter=0;" target="7QlRNy11sMe4qah2yADF-37" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-35" parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;rounded=0;" value="//User libraries&lt;br&gt;#include &quot;Cities.h&quot;&lt;br&gt;#include &quot;Players.h&quot;&lt;br&gt;#include &quot;Board.h&quot;" vertex="1">
+          <mxGeometry height="60" width="155.5" x="669.75" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-40" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-39" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-37" parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;rounded=0;" value="//Global Constants - Physics/Chemistry/Conversons/Array Dimensions&lt;br&gt;int const MAX_BOARD_SPACES = 40; //Total number of spaces on the board&lt;br&gt;int const MAX_PLAYERS = 4;&amp;nbsp; &amp;nbsp; &amp;nbsp;//Maximum number of players&lt;br&gt;int const MAX_CITIES = 22+4+2; //22 properties + 4 railroads + 2 utilities&lt;br&gt;int const MAX_CHANCE_CARDS = 16; //Number of Chance cards&lt;br&gt;int const MAX_COMMUNITY_CHEST_CARDS = 16; //Number of Community Chest cards&lt;br&gt;int const BOARD_SIZE = 40;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;//Total number of spaces on the board&lt;br&gt;int const STARTINGBALANCE = 1500;&amp;nbsp; //Starting balance for each players&lt;br&gt;int const SALARY = 200;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; //Amount collected when passing Go" vertex="1">
+          <mxGeometry height="140" width="490" x="179.75" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-42" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-41" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-39" parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;rounded=0;" value="//Function Prototype&lt;br&gt;void initialization(string* filesNames, City* cities, Board* board, int* chanceCards, int* communityChestCards);&lt;br&gt;City readCityFromFile(fstream &amp;amp;inFile, int id);&lt;br&gt;Board readBoardFromFile(fstream &amp;amp;inFile, int id);&lt;br&gt;void deallocateMemory(Player* players, City* cities, Board* board, int* chanceCards, int* communityChestCards);&lt;br&gt;void deallocateMemory(int* array);&lt;br&gt;void deallocateMemory(string* array);&lt;br&gt;int&amp;nbsp; initializePlayers(Player* players, int nOfPlyrs);&lt;br&gt;void getOrderOfPlay(Player* players, int nOfPlyrs);&lt;br&gt;void sortParallelArray(int *arr, Player* players, int size);&lt;br&gt;int binarySearch(int * array, int value);&lt;br&gt;void sortArray(int *array, int size);&lt;br&gt;void randomizeArray(int *array, int size);&amp;nbsp;&lt;br&gt;void rollDice(int* diceRoll)&lt;br&gt;void mainGameLoop(Player* players, Board* board, City* cities, int* chanceCards, int* communityChestCards, int* housesAvailable, int* hotelsAvailable, int nOfPlyrs);&lt;br&gt;int showMenu(int menuTemplateIndex);&lt;br&gt;void handleMenuChoice(int choice,int menuTemplateIndex, int playerIndex, Player* players, Board* board, City* cities, int* chanceCards, int* communityChestCards, int* housesAvailable, int* hotelsAvailable, int nOfPlyrs);&lt;br&gt;void movePlayer(int* doublecount, bool* doubleRoll, int playerIndex, Player* players, Board* board, City* cities, int* chanceCards, int* communityChestCards, int* housesAvailable, int* hotelsAvailable, int nOfPlyrs);&lt;br&gt;void locationAction(int playerIndex, int rollTotal, Player* players, Board* board, City* cities, int* chanceCards, int* communityChestCards);&lt;br&gt;void payRentOrTax(int playerIndex, int rollTotal, Player* player, Board* board, City* cities);&lt;br&gt;void buyProperty(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;void drawChanceCard(int playerIndex, Player* players, int* chanceCards, Board* board, City* cities);&lt;br&gt;void drawCommunityChestCard(int playerIndex, Player* players, int* communityChestCards, Board* board, City* cities);&lt;br&gt;void goToJail(int playerIndex, Player* players);&lt;br&gt;void jailTurn(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;void moneyTransaction(int fromPlayerIndex, int toPlayerIndex, Player* players, int amount);&lt;br&gt;void moneyTransaction(int playerIndex, Player* players, int amount);&lt;br&gt;void handleLowBalance(int playerIndex, int amount, Player* players, Board* board, City* cities);&lt;br&gt;void upgradeProperty(int playerIndex, int* housesAvailable, int* hotelsAvailable, Player* players, Board* board, City* cities);&lt;br&gt;void mortgageProperty(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;void unmortgageProperty(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;void sellProperty(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;void tradeProperty(int playerIndex, Player* players, Board* board, City* cities);&lt;br&gt;int declareBankruptcy(int playerIndex, int* housesAvailable, int* hotelsAvailable, Player* players, Board* board, City* cities);&lt;br&gt;void calculateGroupOwned(int propertyID, int playerIndex, Player* players, City* cities);&lt;br&gt;void listPlayerProperties(int playerIndex, Player* players, City* cities);&lt;br&gt;void displayPropertyOneLiner(int propertyID, City* cities);" vertex="1">
+          <mxGeometry height="600" width="830" x="10" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-41" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" value="Page 2" vertex="1">
+          <mxGeometry height="80" width="80" x="385" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-45" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-44" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-43" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Page 2" vertex="1">
+          <mxGeometry height="80" width="80" x="385" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-47" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-46" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-44" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;" value="int main" vertex="1">
+          <mxGeometry height="40" width="150" x="349.63" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-49" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-48" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-46" parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;" value="//Set the Random Number seed&lt;br&gt;&amp;nbsp; &amp;nbsp; srand(static_cast&amp;lt;unsigned int&amp;gt;(time(0)));" vertex="1">
+          <mxGeometry height="40" width="247.75" x="301.04" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-51" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-50" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="//Declare Variables&lt;br&gt;&amp;nbsp; &amp;nbsp; Player* players = new Player[MAX_PLAYERS];&lt;br&gt;&amp;nbsp; &amp;nbsp; City* cities = new City[MAX_CITIES];&lt;br&gt;&amp;nbsp; &amp;nbsp; Board* board = new Board[BOARD_SIZE];&lt;br&gt;&amp;nbsp; &amp;nbsp; int* chanceCards = new int[MAX_CHANCE_CARDS];&lt;br&gt;&amp;nbsp; &amp;nbsp; int* communityChestCards = new int[MAX_COMMUNITY_CHEST_CARDS];&lt;br&gt;&amp;nbsp; &amp;nbsp; int noOfPlayers = MAX_PLAYERS;&lt;br&gt;&amp;nbsp; &amp;nbsp; int housesAvailable = 32;&lt;br&gt;&amp;nbsp; &amp;nbsp; int hotelsAvailable = 12;&lt;br&gt;&amp;nbsp; &amp;nbsp; string* filenames = new string[4];&lt;br&gt;&amp;nbsp; &amp;nbsp; filenames[0] = &quot;CityData.bin&quot;;&lt;br&gt;&amp;nbsp; &amp;nbsp; filenames[1] = &quot;BoardData.bin&quot;;&lt;br&gt;&amp;nbsp; &amp;nbsp; filenames[2] = &quot;ChanceCardsData.bin&quot;;&lt;br&gt;&amp;nbsp; &amp;nbsp; filenames[3] = &quot;CommunityChestCardsData.bin&quot;;" link="//Declare Variables&#xa;    Player* players = new Player[MAX_PLAYERS];&#xa;    City* cities = new City[MAX_CITIES];&#xa;    Board* board = new Board[BOARD_SIZE];&#xa;    int* chanceCards = new int[MAX_CHANCE_CARDS];&#xa;    int* communityChestCards = new int[MAX_COMMUNITY_CHEST_CARDS];&#xa;&#xa;    int noOfPlayers = MAX_PLAYERS;&#xa;    int housesAvailable = 32;&#xa;    int hotelsAvailable = 12;&#xa;&#xa;    string* filenames = new string[4];&#xa;    filenames[0] = &quot;CityData.bin&quot;;&#xa;    filenames[1] = &quot;BoardData.bin&quot;;&#xa;    filenames[2] = &quot;ChanceCardsData.bin&quot;;&#xa;    filenames[3] = &quot;CommunityChestCardsData.bin&quot;;" id="7QlRNy11sMe4qah2yADF-48">
+          <mxCell parent="clEPGdFe9xM6kFZr75yi-1" style="whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="240" width="307.82" x="271" y="1370" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7QlRNy11sMe4qah2yADF-53" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-52" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-50" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="//Initialize Variables and game components&lt;br&gt;&amp;nbsp; &amp;nbsp; initialization(filenames, cities, board, chanceCards, communityChestCards);" vertex="1">
+          <mxGeometry height="40" width="530" x="160" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-55" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-54" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-52" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="//Start new game&lt;br&gt;&amp;nbsp; &amp;nbsp; cout &amp;lt;&amp;lt; &quot;Welcome to Monopoly!&quot; &amp;lt;&amp;lt; endl;&lt;br&gt;&amp;nbsp; &amp;nbsp; cout &amp;lt;&amp;lt; &quot;Starting a new game of Monopoly!&quot; &amp;lt;&amp;lt; endl;&lt;br&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp; cout &amp;lt;&amp;lt; &quot;Press Enter to begin...&quot; &amp;lt;&amp;lt; endl;&lt;br&gt;&amp;nbsp; &amp;nbsp; cin.get(); //Wait for user to press Enter" vertex="1">
+          <mxGeometry height="90" width="345" x="253" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-57" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-56" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-54" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&amp;nbsp; &amp;nbsp; noOfPlayers = initializePlayers(players, noOfPlayers);&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="385.25" x="232.13" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-59" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-58" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="cout &lt;&lt; &quot;Number of players: &quot; &lt;&lt; noOfPlayers &lt;&lt; endl;&#xa;    cin.ignore(); //Ignore the newline character left in the input buffer&#xa;&#xa;&#xa;    cout &lt;&lt; &quot;----------------------------------------&quot; &lt;&lt; endl;&#xa;&#xa;    cout &lt;&lt; &quot;First, let&#39;s determine the order of play.&quot; &lt;&lt; endl;&#xa;    cout &lt;&lt; &quot;Press Continue to begin...&quot; &lt;&lt; endl;&#xa;    cin.get(); //Wait for user to press Enter" link="cout &lt;&lt; &quot;Number of players: &quot; &lt;&lt; noOfPlayers &lt;&lt; endl;&#xa;    cin.ignore(); //Ignore the newline character left in the input buffer&#xa;&#xa;&#xa;    cout &lt;&lt; &quot;----------------------------------------&quot; &lt;&lt; endl;&#xa;&#xa;    cout &lt;&lt; &quot;First, let&#39;s determine the order of play.&quot; &lt;&lt; endl;&#xa;    cout &lt;&lt; &quot;Press Continue to begin...&quot; &lt;&lt; endl;&#xa;    cin.get(); //Wait for user to press Enter" id="7QlRNy11sMe4qah2yADF-56">
+          <mxCell parent="clEPGdFe9xM6kFZr75yi-1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1">
+            <mxGeometry height="150" width="425.25" x="212.88" y="1890" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7QlRNy11sMe4qah2yADF-58" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;" value="Page 3" vertex="1">
+          <mxGeometry height="80" width="80" x="385.505" y="2070" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-62" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-61" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-60" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;" value="Page 3" vertex="1">
+          <mxGeometry height="80" width="80" x="385.51" y="2220" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-64" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-63" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-61" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&amp;nbsp; &amp;nbsp; getOrderOfPlay(players, noOfPlayers);&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="294.49" x="277.39" y="2330" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-66" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-65" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-63" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&amp;nbsp; &amp;nbsp; //Enter main game loop&lt;br&gt;&amp;nbsp; &amp;nbsp; mainGameLoop(players, board, cities, chanceCards, communityChestCards, &amp;amp;housesAvailable, &amp;amp;hotelsAvailable, noOfPlayers);&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="550.01" x="150" y="2400" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-68" edge="1" parent="clEPGdFe9xM6kFZr75yi-1" source="7QlRNy11sMe4qah2yADF-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7QlRNy11sMe4qah2yADF-67" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-65" parent="clEPGdFe9xM6kFZr75yi-1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&amp;nbsp; &amp;nbsp; //Deallocate all dynamically allocated memory at the end of the game&lt;br&gt;&amp;nbsp; &amp;nbsp; deallocateMemory(players, cities, board, chanceCards, communityChestCards);&lt;br&gt;&amp;nbsp; &amp;nbsp; deallocateMemory(filenames);" vertex="1">
+          <mxGeometry height="90" width="508.01" x="171.5" y="2500" as="geometry" />
+        </mxCell>
+        <mxCell id="7QlRNy11sMe4qah2yADF-67" parent="clEPGdFe9xM6kFZr75yi-1" style="ellipse;whiteSpace=wrap;html=1;" value="//Exit the program&lt;br&gt;&amp;nbsp; &amp;nbsp; return 0;" vertex="1">
+          <mxGeometry height="65" width="184.5" x="333.26" y="2640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
