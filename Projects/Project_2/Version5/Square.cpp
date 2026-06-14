@@ -1,4 +1,9 @@
-
+/*
+Filename:  Square.cpp
+Author:    Philopatair Mallik
+Date:      00/00/2026
+Purpose:   class implementation file
+*/
 
 //System libraries
 #include <iostream>

@@ -29,7 +29,7 @@ class Card{
     int value; //Value associated with the card, used to determine the amount of money to pay/receive or the number of spaces to move, etc.
   public:
     //constructors
-    Card(); //Default constructor required for Deck<Card>
+    Card(); //Default constructor required for Deck<Card> storage
     Card(const char* description, int actionType, int value); //Constructor to initialize the card with a description, action type, and value
 
     //destructors

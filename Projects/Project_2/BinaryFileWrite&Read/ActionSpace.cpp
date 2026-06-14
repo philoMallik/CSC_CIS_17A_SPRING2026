@@ -1,14 +1,30 @@
+
+
+
+// System Libraries
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// User Libraries
 #include "ActionSpace.h"
 #include "Player.h"
 #include "Square.h"
-
-#include <cstring>
+#include "Card.h"
+#include "Deck.h"
 
 ActionSpace::ActionSpace(int id, const char* name, int type) : Square() {
 	this->setIndex(id);
 	this->type = type;
 	this->setName(name);
 	this->name[sizeof(this->name) - 1] = '\0'; // Ensure null-termination
+}
+ActionSpace::ActionSpace(int id, const char* name, int type, Deck<Card>* deck) : Square() {
+	this->setIndex(id);
+	this->type = type;
+	this->setName(name);
+	this->name[sizeof(this->name) - 1] = '\0'; // Ensure null-termination
+	this->deck = deck;
 }
 
 int ActionSpace::getType() const {

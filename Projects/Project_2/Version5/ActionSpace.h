@@ -33,8 +33,7 @@ class ActionSpace : public Square { //Inherit from Square class
         6 for Go To Jail
     */
     char name[50]; //Name of the action space
-    Deck<Card>* chanceDeck; //Pointer to the Chance deck, used to draw a card when a player lands on a Chance space
-    Deck<Card>* communityChestDeck; //Pointer to the Community Chest deck, used to draw
+    Deck<Card>* deck; //Pointer to the appropriate card deck (for Chance and Community Chest spaces)
 
     void onGo(Player* player); //function to handle the action when a player lands on Go
     void onChance(Player* player); //function to handle the action when a player lands on Chance
@@ -46,7 +45,9 @@ class ActionSpace : public Square { //Inherit from Square class
   public:
     //constructors
     ActionSpace(int id, const char* name, int type); //Constructor to initialize the action space with a specific type
-    
+    ActionSpace(int id, const char* name, int type, Deck<Card>* deck); //Constructor to initialize the action space with a specific type and a pointer to the appropriate card deck (for Chance and Community Chest spaces)
+
+
     //Accessors
     int getType() const;
     const char* getName() const;

@@ -1,14 +1,33 @@
+/*
+Filename:  ActionSpace.cpp
+Author:    Philopatair Mallik
+Date:      00/00/2026
+Purpose:   class implementation file
+*/
+
+//System libraries
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+//User libraries
 #include "ActionSpace.h"
 #include "Player.h"
 #include "Square.h"
 
-#include <cstring>
 
 ActionSpace::ActionSpace(int id, const char* name, int type) : Square() {
 	this->setIndex(id);
 	this->type = type;
 	this->setName(name);
 	this->name[sizeof(this->name) - 1] = '\0'; // Ensure null-termination
+}
+ActionSpace::ActionSpace(int id, const char* name, int type, Deck<Card>* deck) : Square() {
+	this->setIndex(id);
+	this->type = type;
+	this->setName(name);
+	this->name[sizeof(this->name) - 1] = '\0'; // Ensure null-termination
+	this->deck = deck;
 }
 
 int ActionSpace::getType() const {
@@ -62,7 +81,7 @@ void ActionSpace::onGo(Player* player) {
 
 void ActionSpace::onChance(Player* player) {
 	cout << "Draw a Chance card." << endl;
-	Card drawnCard = chanceDeck->drawCard();
+	Card drawnCard = deck->drawCard();
 	switch (drawnCard.getActionType()) {
 		case 0: // Move to a specific square
 			player->moveTo(drawnCard.getValue());
@@ -98,7 +117,7 @@ void ActionSpace::onChance(Player* player) {
 
 void ActionSpace::onCommunityChest(Player* player) {
 	cout << "Drawing a Community Chest card." << endl;
-	Card drawnCard = communityChestDeck->drawCard();
+	Card drawnCard = deck->drawCard();
 	switch (drawnCard.getActionType()) {
 		case 0: // Move to a specific square
 			player->moveTo(drawnCard.getValue());
